@@ -19,8 +19,6 @@
 
 " Plugins {{{
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-" Plug 'glepnir/dashboard-nvim'
-" Plug 'tribela/vim-transparent' " backgound transparent
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/tagbar'
@@ -28,7 +26,6 @@ Plug 'sheerun/vim-polyglot' " Language pack for vim
 Plug 'junegunn/goyo.vim'
 Plug 'rentalcustard/exuberant-ctags'
 
-Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -39,7 +36,6 @@ Plug 'neomake/neomake'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-" https://github.com/nvim-telescope/telescope.nvim#getting-started
 Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 " Plugins }}}
@@ -156,6 +152,32 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 "make install # may require extra privileges depending on where to install
 " Tagbar }}}
 
+" StatusLine {{{
+
+function! GitBranch()
+        return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+        let l:branchname = GitBranch()
+        return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f " file path
+set statusline+=%m
+set statusline+=\ %{wordcount().words}\ words
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+
+" }}}
 " Tabs {{{
 " General tab settings
 set tabstop=8       " number of visual spaces per TAB
@@ -174,7 +196,6 @@ autocmd Filetype make setlocal ts=8 sts=8 sw=8
 let g:neoformat_basic_format_retab = 1
 " tabs }}}
 " Visual {{{
-" Bar
 set background=dark
 source $HOME/.config/nvim/MinePink.vim
 
@@ -186,12 +207,11 @@ set splitbelow splitright
 
 " }}}
 
+set spell spelllang=en_us
+
 scriptencoding utf-8
 let s:fontsize = 10
 set foldmethod=marker
-
-set spell spelllang=en_us
-set spell
 
 " set the side numbers to relative
 set number relativenumber
