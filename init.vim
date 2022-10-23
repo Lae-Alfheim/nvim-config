@@ -106,20 +106,20 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Explore | endif
 let g:NERDTreeQuitOnOpen = 1 " makes nerdtree close when files is opened
 " NERDTree }}}
-" lightline {{{
-set noshowmode
-" add cocstatus into lightline
-let g:lightline = {
-        \ 'colorscheme': 'one',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'cocstatus': 'coc#status'
-        \ },
-        \ }
-" lightline }}}
+"" lightline {{{
+"set noshowmode
+"" add cocstatus into lightline
+"let g:lightline = {
+"        \ 'colorscheme': 'one',
+"        \ 'active': {
+"        \   'left': [ [ 'mode', 'paste' ],
+"        \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+"        \ },
+"        \ 'component_function': {
+"        \   'cocstatus': 'coc#status'
+"        \ },
+"        \ }
+" }}}
 " coc.nvim {{{
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -156,7 +156,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 "make install # may require extra privileges depending on where to install
 " Tagbar }}}
 
-" tabs {{{
+" Tabs {{{
 " General tab settings
 set tabstop=8       " number of visual spaces per TAB
 set softtabstop=8   " number of spaces in tab when editing
@@ -173,16 +173,25 @@ autocmd Filetype make setlocal ts=8 sts=8 sw=8
 " Enable tab to spaces conversion
 let g:neoformat_basic_format_retab = 1
 " tabs }}}
+" Visual {{{
+" Bar
+set background=dark
+source $HOME/.config/nvim/MinePink.vim
+
+" change fillchars for folding, vertical split, end of buffer, and message separator
+set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
+
+" Split window below/right when creating horizontal/vertical windows
+set splitbelow splitright
+
+" }}}
 
 scriptencoding utf-8
-let s:fontsize = 12
+let s:fontsize = 10
 set foldmethod=marker
 
 set spell spelllang=en_us
-set spell!
-
-set background=dark
-source $HOME/.config/nvim/MinePink.vim
+set spell
 
 " set the side numbers to relative
 set number relativenumber
@@ -208,12 +217,6 @@ endfun
 command! -nargs=0 Trim call Trim()
 set laststatus=2
 
-
-" change fillchars for folding, vertical split, end of buffer, and message separator
-set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
-
-" Split window below/right when creating horizontal/vertical windows
-set splitbelow splitright
 
 " Time in milliseconds to wait for a mapped sequence to complete,
 " see https://unix.stackexchange.com/q/36882/221410 for more info
