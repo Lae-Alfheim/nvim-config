@@ -15,6 +15,8 @@ return require('packer').startup(function()
         use 'pdurbin/vim-tsv'
         use 'preservim/vim-markdown'
 
+        use 'nvim-tree/nvim-tree.lua'
+
         use {'neoclide/coc.nvim', branch = 'release'}
         use 'preservim/tagbar'
         use 'sheerun/vim-polyglot'

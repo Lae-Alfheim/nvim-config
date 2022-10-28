@@ -1,150 +1,19 @@
-"=================     ===============     ===============   ========  ========
-"\\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //
-"||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||
-"|| . .||   ||. . || || . .||   ||. . || || . .||   ||. . || ||. . . . . . . ||
-"||. . ||   || . .|| ||. . ||   || . .|| ||. . ||   || . .|| || . | . . . . .||
-"|| . .||   ||. _-|| ||-_ .||   ||. . || || . .||   ||. _-|| ||-_.|\ . . . . ||
-"||. . ||   ||-'  || ||  `-||   || . .|| ||. . ||   ||-'  || ||  `|\_ . .|. .||
-"|| . _||   ||    || ||    ||   ||_ . || || . _||   ||    || ||   |\ `-_/| . ||
-"||_-' ||  .|/    || ||    \|.  || `-_|| ||_-' ||  .|/    || ||   | \  / |-_.||
-"||    ||_-'      || ||      `-_||    || ||    ||_-'      || ||   | \  / |  `||
-"||    `'         || ||         `'    || ||    `'         || ||   | \  / |   ||
-"||            .===' `===.         .==='.`===.         .===' /==. |  \/  |   ||
-"||         .=='   \_|-_ `===. .==='   _|_   `===. .===' _-|/   `==  \/  |   ||
-"||      .=='    _-'    `-_  `='    _-'   `-_    `='  _-'   `-_  /|  \/  |   ||
-"||   .=='    _-'          '-__\._-'         '-_./__-'         `' |. /|  |   ||
-"||.=='    _-'                                                     `' |  /==.||
-"=='    _-'                        N E O V I M                         \/   `==
-"\   _-'                                                                `-_   /
-
-
-"leg g:coc_global_extensions = ['', '', '', '', '', '']
-
 " Plugins {{{
+
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
 Plug 'luochen1990/rainbow'
 
-"Plug 'preservim/nerdtree'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'preservim/tagbar'
-"Plug 'sheerun/vim-polyglot' " Language pack for vim
-"Plug 'junegunn/goyo.vim'
-"Plug 'rentalcustard/exuberant-ctags'
-"
-"Plug 'ntpeters/vim-better-whitespace'
-"
-"Plug 'preservim/vim-markdown'
-"Plug 'pdurbin/vim-tsv'
-"
-"Plug 'neomake/neomake'
-"
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-"Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
+
 " Plugins }}}
 
 " Keymap {{{
-" Move Lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-
-" Spelling
-nnoremap <leader>p :set spell!<CR>
-
-" Remap C-c to <esc>
-nmap <c-c> <esc>
-imap <c-c> <esc>
-vmap <c-c> <esc>
-omap <c-c> <esc>
-
-nnoremap <C-k> :winc k <CR>
-nnoremap <C-j> :winc j <CR>
-nnoremap <C-l> :winc l <CR>
-nnoremap <C-h> :winc h <CR>
-
-nnoremap <S-w> :set wrap!<CR>
-nnoremap <C-t> :NERDTreeToggle <CR>
-nnoremap <C-S-t> :Explore <CR>
-"nnoremap <C-e> :TagbarJump <CR>
 
 tnoremap <silent> <esc> <C-\><C-n>
+" Escape from terminal unknow how to lua
 
-
-nnoremap <Leader>at :TagbarToggle<CR>
-nnoremap <Leader>n :set number relativenumber!<CR>
-nnoremap <Leader>t :term<CR>
-nnoremap <Leader>s :split<CR>
-nnoremap <Leader>v :vsplit<CR>
-
-nnoremap <Leader>xs :set ft=xxd<CR>
-nnoremap <Leader>xx :%!xxd<CR>
-nnoremap <Leader>xr :%!xxd -r<CR>
-nnoremap <Leader>cc :set colorcolumn=64<CR>
-nnoremap <Leader>cn :set colorcolumn=0<CR>
 " Keymap }}}
-" Neomake {{{
-" When writing a buffer (no delay).
-"call neomake#configure#automake('w')
-" Neomake }}}
-
-" NERDTree {{{
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | Explore | endif
-let g:NERDTreeQuitOnOpen = 1 " makes nerdtree close when files is opened
-" NERDTree }}}
-"" lightline {{{
-"set noshowmode
-"" add cocstatus into lightline
-"let g:lightline = {
-"        \ 'colorscheme': 'one',
-"        \ 'active': {
-"        \   'left': [ [ 'mode', 'paste' ],
-"        \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-"        \ },
-"        \ 'component_function': {
-"        \   'cocstatus': 'coc#status'
-"        \ },
-"        \ }
-" }}}
-" coc.nvim {{{
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" NOTE: There's always complete item selected by default, you may want to enable
-" no select by `"suggest.noselect": true` in your configuration file.
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"ap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <c-O> coc#refresh()
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-"" CocInstall coc-prettier
-"" CocInstall coc-jason coc-tsserver
-"" CocInstall coc-clangd
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-" coc.nvim }}}
-" rainbow {{{
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-" rainbow }}}
-" Tagbar {{{
-
-" tagbar how to get ctags
-"git clone https://github.com/universal-ctags/ctags.git
-"cd ctags
-"./autogen.sh
-"./configure --prefix=/where/you/want # defaults to /usr/local
-"make
-"make install # may require extra privileges depending on where to install
-" Tagbar }}}
 
 " StatusLine {{{
 
@@ -173,11 +42,6 @@ set statusline+=\ %p%%
 
 " }}}
 " Tabs {{{
-" General tab settings
-set tabstop=8       " number of visual spaces per TAB
-set softtabstop=8   " number of spaces in tab when editing
-set shiftwidth=8    " number of spaces to use for autoindent
-set expandtab       " expand tab to spaces so that tabs are spaces
 
 autocmd Filetype html setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4 expandtab
@@ -186,20 +50,7 @@ autocmd Filetype cpp setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype tsv setlocal ts=32 sts=32 sw=32 noexpandtab
 autocmd Filetype make setlocal ts=8 sts=8 sw=8
 
-" Enable tab to spaces conversion
-let g:neoformat_basic_format_retab = 1
 " tabs }}}
-" Visual {{{
-set background=dark
-source $HOME/.config/nvim/MinePink.vim
-
-" change fillchars for folding, vertical split, end of buffer, and message separator
-set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
-
-" Split window below/right when creating horizontal/vertical windows
-set splitbelow splitright
-
-" }}}
 
 set spell spelllang=en_us
 
