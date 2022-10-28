@@ -14,7 +14,6 @@ set.number = "relativenumber"
 set.foldmethod = "marker"
 set.virualbell = true
 
-
 -- COC {{{
 -- Some servers have issues with backup files, see #649.
 vim.opt.backup = false
