@@ -9,6 +9,12 @@ set.softtabstop = 8
 set.shiftwidth = 8
 set.expandtab = true
 
+-- other
+set.number = "relativenumber"
+set.foldmethod = "marker"
+set.virualbell = true
+
+
 -- COC {{{
 -- Some servers have issues with backup files, see #649.
 vim.opt.backup = false

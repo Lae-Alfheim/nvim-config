@@ -56,13 +56,6 @@ set spell spelllang=en_us
 
 scriptencoding utf-8
 let s:fontsize = 10
-set foldmethod=marker
-
-" set the side numbers to relative
-set number relativenumber
-
-" Don't make noise
-set visualbell
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
