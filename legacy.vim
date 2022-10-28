@@ -17,41 +17,34 @@
 "=='    _-'                        N E O V I M                         \/   `==
 "\   _-'                                                                `-_   /
 
+
+"leg g:coc_global_extensions = ['', '', '', '', '', '']
+
 " Plugins {{{
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/tagbar'
-Plug 'sheerun/vim-polyglot' " Language pack for vim
-Plug 'junegunn/goyo.vim'
-Plug 'rentalcustard/exuberant-ctags'
-
 Plug 'luochen1990/rainbow'
-Plug 'ntpeters/vim-better-whitespace'
 
-Plug 'preservim/vim-markdown'
-Plug 'pdurbin/vim-tsv'
-
-Plug 'neomake/neomake'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'preservim/nerdtree'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'preservim/tagbar'
+"Plug 'sheerun/vim-polyglot' " Language pack for vim
+"Plug 'junegunn/goyo.vim'
+"Plug 'rentalcustard/exuberant-ctags'
+"
+"Plug 'ntpeters/vim-better-whitespace'
+"
+"Plug 'preservim/vim-markdown'
+"Plug 'pdurbin/vim-tsv'
+"
+"Plug 'neomake/neomake'
+"
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+"Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 " Plugins }}}
 
 " Keymap {{{
-"nmap - Display normal mode maps
-"imap - Display insert mode maps
-"vmap - Display visual and select mode maps
-"smap - Display select mode maps
-"xmap - Display visual mode maps
-"cmap - Display command-line mode maps
-"omap - Display operator pending mode maps
-
-" set leader key
-let mapleader = "\\"
-
 " Move Lines
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -94,8 +87,9 @@ nnoremap <Leader>cn :set colorcolumn=0<CR>
 " Keymap }}}
 " Neomake {{{
 " When writing a buffer (no delay).
-call neomake#configure#automake('w')
+"call neomake#configure#automake('w')
 " Neomake }}}
+
 " NERDTree {{{
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
@@ -309,6 +303,7 @@ set complete+=kspell complete-=w complete-=b complete-=u complete-=t
 
 set spelllang=en        " Spell languages
 set spellsuggest+=9  " show 9 spell suggestions at most
+set spell!
 
 " Align indent to next multiple value of shiftwidth. For its meaning,
 " see http://vim.1045645.n5.nabble.com/shiftround-option-td5712100.html
