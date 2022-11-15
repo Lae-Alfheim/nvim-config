@@ -8,12 +8,6 @@ call plug#end()
 
 " Plugins }}}
 
-" Keymap {{{
-
-tnoremap <silent> <esc> <C-\><C-n>
-" Escape from terminal unknow how to lua
-
-" Keymap }}}
 
 " StatusLine {{{
 

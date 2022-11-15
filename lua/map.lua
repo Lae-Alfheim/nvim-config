@@ -14,14 +14,28 @@ map('', '<SPACE>', '<nop>')
 vim.g.mapleader = " "
 vim.g.localleader = "," -- local leader
 
+map('t', '<esc>', '<C-\\><C-n>')
+
+
+-- split {{{
+-- split movment
+map('n', '<Leader>s', ':split<CR>')
+map('n', '<Leader>v', ':vsplit<CR>')
+
 map('n', '<C-j>', '<C-w><C-j>')
 map('i', '<C-j>', '<C-w><C-j>')
 map('n', '<C-k>', '<C-w><C-k>')
-map('i', '<C-k>', '<esc><C-w><C-k>')
+map('i', '<C-k>', '<C-w><C-k>')
 map('n', '<C-l>', '<C-w><C-l>')
 map('i', '<C-l>', '<C-w><C-l>')
 map('n', '<C-h>', '<C-w><C-h>')
 map('i', '<C-h>', '<C-w><C-h>')
+
+map('t', '<C-j>', '<C-\\><C-n><C-w><C-j>')
+map('t', '<C-k>', '<C-\\><C-n><C-w><C-k>')
+map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
+map('t', '<C-h>', '<C-\\><C-n><C-w><C-h>')
+-- }}}
 
 -- Remap control c to esc
 map('i', '<C-c>', '<esc>')
@@ -40,8 +54,6 @@ map('i', '<A-k>', '<Esc>:m .-2<CR>==gi')
 
 -- Leader keys
 map('n', '<Leader>t', ':term<CR>')
-map('n', '<Leader>s', ':split<CR>')
-map('n', '<Leader>v', ':vsplit<CR>')
 map('n', '<Leader>at', ':TagbarToggle<CR>')
 map('n', '<Leader>z', ':ZenMode<CR>')
 
