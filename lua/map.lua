@@ -34,6 +34,7 @@ map('n', '<Leader>t', ':term<CR>')
 map('n', '<Leader>s', ':split<CR>')
 map('n', '<Leader>v', ':vsplit<CR>')
 map('n', '<Leader>at', ':TagbarToggle<CR>')
+map('n', '<Leader>z', ':ZenMode<CR>')
 
 -- Nvim Tree
 map('n', '<S-t>', ':NvimTreeToggle<CR>')

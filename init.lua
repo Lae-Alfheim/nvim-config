@@ -42,4 +42,4 @@ package.path = package.path .. ';' .. config_files
 
 require('lua/plug')
 require('lua/map')
-require('lua/opt')
+require('lua/opt') -- set

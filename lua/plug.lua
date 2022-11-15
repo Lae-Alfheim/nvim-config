@@ -9,6 +9,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 -- }}}
 
+-- ZenMode {{{
+require("zen-mode").setup({
+  window = {
+    width = 85 --.75 -- width will be 85% of the editor width
+  }
+})
+-- }}}
+
+
 return require('packer').startup(function()
         use 'rust-lang/rust.vim'
         use 'lervag/vimtex'
@@ -28,6 +37,6 @@ return require('packer').startup(function()
         use 'neomake/neomake'
         --use 'terrortylor/nvim-commit'
 
-        use 'folke/zen-mode.nvim' -- goyo in lua
+        use "folke/zen-mode.nvim"
 
 end)

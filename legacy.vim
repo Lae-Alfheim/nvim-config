@@ -57,6 +57,13 @@ set spell spelllang=en_us
 scriptencoding utf-8
 let s:fontsize = 10
 
+" set the side numbers to relative
+set number relativenumber
+set foldmethod=marker
+set visualbell
+
+" Don't make noise
+
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
