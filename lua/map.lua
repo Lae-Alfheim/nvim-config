@@ -14,6 +14,15 @@ map('', '<SPACE>', '<nop>')
 vim.g.mapleader = " "
 vim.g.localleader = "," -- local leader
 
+map('n', '<C-j>', '<C-w><C-j>')
+map('i', '<C-j>', '<C-w><C-j>')
+map('n', '<C-k>', '<C-w><C-k>')
+map('i', '<C-k>', '<C-w><C-k>')
+map('n', '<C-l>', '<C-w><C-l>')
+map('i', '<C-l>', '<C-w><C-l>')
+map('n', '<C-h>', '<C-w><C-h>')
+map('i', '<C-h>', '<C-w><C-h>')
+
 -- Remap control c to esc
 map('i', '<C-c>', '<esc>')
 
