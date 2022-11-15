@@ -17,7 +17,7 @@ vim.g.localleader = "," -- local leader
 map('n', '<C-j>', '<C-w><C-j>')
 map('i', '<C-j>', '<C-w><C-j>')
 map('n', '<C-k>', '<C-w><C-k>')
-map('i', '<C-k>', '<C-w><C-k>')
+map('i', '<C-k>', '<esc><C-w><C-k>')
 map('n', '<C-l>', '<C-w><C-l>')
 map('i', '<C-l>', '<C-w><C-l>')
 map('n', '<C-h>', '<C-w><C-h>')
