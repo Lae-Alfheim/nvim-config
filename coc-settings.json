@@ -1,5 +1,5 @@
 "languageserver": {
-  "rust": { // :Cocinstall coc-rust-analyzer
+  "rust": {
     "command": "rust-analyzer",
     "filetypes": ["rust"],
     "rootPatterns": ["Cargo.toml"]
