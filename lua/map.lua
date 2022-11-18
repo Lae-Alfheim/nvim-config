@@ -16,7 +16,6 @@ vim.g.localleader = "," -- local leader
 
 map('t', '<esc>', '<C-\\><C-n>')
 
-
 -- split {{{
 -- split movment
 map('n', '<Leader>s', ':split<CR>')
@@ -53,7 +52,7 @@ map('i', '<A-j>', '<Esc>:m .+1<CR>==gi')
 map('i', '<A-k>', '<Esc>:m .-2<CR>==gi')
 
 -- Leader keys
-map('n', '<Leader>t', ':term<CR>')
+map('n', '<Leader>t', ':vsplit<CR>:term<CR>')
 map('n', '<Leader>at', ':TagbarToggle<CR>')
 map('n', '<Leader>z', ':ZenMode<CR>')
 
