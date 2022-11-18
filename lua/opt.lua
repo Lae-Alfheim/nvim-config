@@ -5,7 +5,7 @@ set.background = "dark" -- background {dark, light}
 
 
 -- Stop Control back and shift backspace remove word
-set.backspace = "indent"
+set.backspace = "start"
 
 -- Tab
 set.tabstop = 8
