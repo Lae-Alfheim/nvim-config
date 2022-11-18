@@ -12,7 +12,7 @@ end
 -- ZenMode {{{
 require("zen-mode").setup({
   window = {
-    width = .75 --.75 -- width will be 85% of the editor width
+    width = 80 --.75 -- width will be 85% of the editor width
   }
 })
 -- }}}

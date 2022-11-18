@@ -4,9 +4,6 @@ local set = vim.opt
 set.background = "dark" -- background {dark, light}
 
 
--- Stop Control back and shift backspace remove word
-set.backspace = "start"
-
 -- Tab
 set.tabstop = 8
 set.softtabstop = 8
