@@ -12,14 +12,14 @@ end
 -- ZenMode {{{
 require("zen-mode").setup({
   window = {
-    width = 80 --.75 -- width will be 85% of the editor width
+    width = 128 --.75 -- width will be 85% of the editor width
   }
 })
 -- }}}
 
 
 return require('packer').startup(function()
-        use 'rust-lang/rust.vim'
+        --use 'rust-lang/rust.vim'
         use 'lervag/vimtex'
         use 'pdurbin/vim-tsv'
         use 'preservim/vim-markdown'

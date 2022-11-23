@@ -40,6 +40,7 @@ vim.o.packpath = vim.o.packpath .. ',' .. packer_path .. ',' .. config_path
 package.path = package.path .. ';' .. config_files
 -- }}}
 
+require('lua/global')
 require('lua/plug')
 require('lua/map')
 require('lua/opt') -- set
