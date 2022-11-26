@@ -17,11 +17,12 @@
 -- =='    _-'                        N E O V I M                         \/   `==
 -- \   _-'                                                                `-_   /
 
+
 -- load legacy options
 vim.cmd([[
-        source $HOME/.config/nvim/legacy.vim
         source $HOME/.config/nvim/MinePink.vim
 ]])
+--source $HOME/.config/nvim/legacy.vim
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -40,7 +41,13 @@ vim.o.packpath = vim.o.packpath .. ',' .. packer_path .. ',' .. config_path
 package.path = package.path .. ';' .. config_files
 -- }}}
 
-require('lua/global')
-require('lua/plug')
-require('lua/map')
-require('lua/opt') -- set
+require('lua/statusline')   -- custom status line "https://elianiva.my.id/post/neovim-lua-statusline/"
+require('lua/plug')             -- nvim plugins and configurations
+require('lua/global')           -- global variables     "vim.g"
+require('lua/api')              -- nvim api calls       "vim.api"
+require('lua/map')              -- nvim keymaps         "map()"
+require('lua/opt')              -- vim normal set       "vim.opt"
+
+
+
+-- vim: tw=80

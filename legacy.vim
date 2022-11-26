@@ -1,10 +1,10 @@
 " Plugins {{{
 
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-
-Plug 'luochen1990/rainbow'
-
-call plug#end()
+"call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+"
+"Plug 'luochen1990/rainbow'
+"
+"call plug#end()
 
 " Plugins }}}
 

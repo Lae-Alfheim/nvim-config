@@ -39,4 +39,5 @@ return require('packer').startup(function()
 
         use "folke/zen-mode.nvim"
 
+        use 'nvim-tree/nvim-web-devicons'
 end)

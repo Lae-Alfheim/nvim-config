@@ -1,10 +1,17 @@
 local set = vim.opt
 
 
+-- visuals
 set.background = "dark" -- background {dark, light}
+set.visualbell = true
+set.relativenumber = true
+set.foldmethod = "marker"
+    -- statusline
+vim.opt.laststatus = 2
+vim.cmd([[ set noshowmode ]])
 
 
--- Tab
+-- tabs
 set.tabstop = 8
 set.softtabstop = 8
 set.shiftwidth = 8
@@ -13,7 +20,9 @@ set.expandtab = true
 set.splitbelow = true
 set.splitright = true
 
+
 -- other
+
 
 -- COC {{{
 -- Some servers have issues with backup files, see #649.
